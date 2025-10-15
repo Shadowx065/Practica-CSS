@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación - Shadow</title>
+    <style>
+        /* --- Fondo y centrado --- */
+        body {
+            background-color: #0b0c10;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* --- Tarjeta principal --- */
+        .tarjeta {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            width: 340px;
+            text-align: center;
+            padding: 30px 25px;
+            border-top: 6px solid #0066cc;
+            transition: 0.3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+
+        /* --- Animación del neón del logo --- */
+        @keyframes neonPulse {
+            0% {
+                box-shadow: 0 0 15px #0066cc, 0 0 30px #0066cc, 0 0 60px #0066cc;
+            }
+            50% {
+                box-shadow: 0 0 20px #d60000, 0 0 40px #d60000, 0 0 80px #d60000;
+            }
+            100% {
+                box-shadow: 0 0 15px #0066cc, 0 0 30px #0066cc, 0 0 60px #0066cc;
+            }
+        }
+
+        /* --- Logo circular --- */
+        .logo {
+            background: linear-gradient(135deg, #0066cc, #d60000);
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: neonPulse 2s infinite alternate ease-in-out;
+            transition: transform 0.8s ease;
+        }
+
+        /* --- Efecto de brillo en el logo --- */
+        .logo::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: skewX(-25deg);
+            transition: left 0.6s ease;
+        }
+
+        .tarjeta:hover .logo {
+            transform: rotate(360deg) scale(1.15);
+        }
+
+        .tarjeta:hover .logo::before {
+            left: 130%;
+        }
+
+        /* --- Nombre y alias --- */
+        .tarjeta h1 {
+            font-size: 22px;
+            color: #0b3d91;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .tarjeta h3 {
+            font-size: 18px;
+            color: #d60000;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .tarjeta hr {
+            width: 60%;
+            border: 1px solid #0066cc;
+            margin: 10px auto 15px auto;
+        }
+
+        /* --- Elemento destacado --- */
+        .tarjeta h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0b3d91;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Texto general --- */
+        .tarjeta p {
+            color: #333;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        /* --- Caja de contacto --- */
+        .contacto {
+            background-color: #f4f7fb;
+            border-left: 4px solid #d60000;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: left;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .contacto p {
+            margin: 6px 0;
+            font-size: 14px;
+            color: #111;
+        }
+
+        .contacto span {
+            font-weight: bold;
+            color: #0b3d91;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Estructura semántica de la tarjeta --- -->
+    <section class="tarjeta">
+        <div class="logo">EU</div>
+
+        <h1>Efren Uriel Aguilar Molotla</h1>
+        <h3>Alias: Shadow</h3>
+        <hr>
+        <h2>ESTUDIANTE | YOUTUBER | STREAMER | GAMER</h2>
+        <p>Hobbys: Jugar videojuegos y Programar 💻🎮</p>
+
+        <div class="contacto">
+            <p>📧 <span>Correo:</span> urielex500@gmail.com</p>
+            <p>📱 <span>Tel:</span> 5540866982 (WhatsApp / Telegram)</p>
+            <p>📍 <span>Ubicación:</span> Xochimilco, CDMX, México</p>
+        </div>
+    </section>
+
+</body>
+</html>
